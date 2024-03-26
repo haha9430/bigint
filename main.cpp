@@ -65,9 +65,34 @@ int main() {
   }
 
   cout << endl;
+  // 숫자를 비교하는 과정
+  int spaceFisrt, spaceFisrtN, spaceSecond, spaceSecondN;
 
+  for (int i = 0; i < size; i++) {
+    if (Fdigit[i] != 0) {
+      spaceFisrt = i;
+      spaceFisrtN = Fdigit[i];
+    }
+  }
+
+  for (int i = 0; i < size; i++) {
+    if (Sdigit[i] != 0) {
+      spaceSecond = i;
+      spaceSecondN = Sdigit[i];
+    }
+  }
+
+  if (spaceFisrt != spaceSecond) {
+    while(spaceFisrtN == spaceSecondN) {
+      spaceFisrt++;
+      spaceSecond++;
+      spaceFisrtN = Fdigit[spaceFisrt];
+      spaceSecondN = Sdigit[spaceSecond];
+    }
+  }
+  
   // 숫자를 빼는 과정
-  if (Fn.size() >= Sn.size()) { // First Number가 Second Number보다 크거나 같을 때
+  if (spaceFisrt >= spaceSecond && spaceFisrtN >= spaceSecondN) { // First Number가 Second Number보다 크거나 같을 때
     for (int i = size - 1; i >= 0; i--) {
       sub[i] = Fdigit[i] - Sdigit[i] + sub[i];
       if (sub[i] < 0) {
