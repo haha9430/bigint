@@ -136,8 +136,6 @@ int main() {
       cout << sub[i];
     }
   }
-  
-  cout << endl;
 
   return 0;
 }
